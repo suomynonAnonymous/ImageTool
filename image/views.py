@@ -1,10 +1,7 @@
 import os
 from django.shortcuts import render, redirect
-
 from imgdetail.settings import BASE_DIR
 from .models import ProcessedImage
-import skimage
-import sklearn
 from skimage import io, transform, color
 import matplotlib.pyplot as plt
 import numpy as np
@@ -13,12 +10,10 @@ import tempfile
 from PIL import Image
 from django.core.files import File
 from skimage.filters import threshold_otsu, try_all_threshold, sobel
-from skimage import exposure
-from skimage import data 
+from skimage import data, exposure 
 from skimage.feature import Cascade
 from matplotlib import patches
 
-# Import your CNN model and other necessary libraries
 
 trained_file = data.lbp_frontal_face_cascade_filename()
 
